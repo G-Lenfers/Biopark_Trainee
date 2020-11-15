@@ -1,0 +1,78 @@
+<!-- Inherit all the HTML formatting code -->
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+    <!-- The title of our web page -->
+    <title>Agendar</title>
+
+{% endblock %}
+
+
+{% block body %}
+
+    <!-- Web page header-->
+    <h2>Agendar envio de comunicação</h2>
+
+    <!--Line break-->
+    <hr>
+
+    <!-- Defining our form to collect data from user input-->
+    <form action="/schedule" method="POST">
+
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <!-- Dia -->
+                <label for="day">Dia:</label>
+                <input type="text" class="form-control" name='day' id='day' placeholder="01">
+            </div>
+            <div class="form-group col-md-2">
+                <!-- Mês -->
+                <label for="month">Mês:</label>
+                <input type="text" class="form-control" name='month' id='month' placeholder="01">
+            </div>
+            <div class="form-group col-md-2">
+                <!-- Ano -->
+                <label for="year">Ano:</label>
+                <input type="text" class="form-control" name='year' id='year' placeholder="2020">
+            </div>
+        </div>
+
+        <br> <!-- Line break -->
+
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <!-- Horas-->
+                <label for="hour">Horas:</label>
+                <input type="text" class="form-control" name="hour" id="hour">
+            </div>
+            <div class="form-group col-md-2"">
+                <!-- Minutos -->
+                <label for="minutes">Minutos:</label>
+                <input type="text" class="form-control" name='minutes' id='minutes'>
+            </div>
+        </div>
+
+        <br> <!-- Line break -->
+
+        <div class="form-group">
+            <!-- Destinatário -->
+            <label for="addressee">Destinatário:</label>
+            <input type="text" class="form-control" name='addressee' id='addressee'>
+        </div>
+
+        <br> <!-- Line break-->
+        <div class="form-group">
+            <label for="message">Mensagem:</label>
+            <textarea class="form-control" name='message' id='message' rows="3"></textarea>
+        </div>
+
+        <br> <!-- Line break -->
+
+        <!-- Our submit button. Value is what is shown in the button-->
+        <input type="submit" value="Solicitar agendamento">
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+<!-- Inherit all the HTML formatting code -->
+{% extends 'base.html' %}
+
+{% block head %}
+
+    <!-- The title of our web page -->
+    <title>Agendamentos</title>
+
+{% endblock %}
+
+
+{% block body %}
+    <br> <!-- Line break-->
+
+    <!-- The div and style are for putting both on the same line -->
+    <div>
+        <!-- Web page header-->
+        <h2 style='display:inline'>Todos os agendamentos</h2>
+
+        <!-- Add a button for create new schedule-->
+        <a style='display:inline' class="btn btn-success float-right" href='/schedule/new'>Agendar novo envio de comunicação</a>
+    </div>
+
+    <hr> <!-- Line divider -->
+
+    <!-- Access all schedule requests -->
+    {% for schedule in schedules %}
+
+        <!-- If we use double {}, we just print out something on the screen -->
+        <h3>Destinatário: {{ schedule.addressee }}</h3>
+
+        <small>Mensagem a ser enviada às: {{ schedule.date_time }}</small>
+
+        <br> <!-- put a bit of space-->
+        <br>
+
+        <!-- pre-wrap: preserve the wrap (whitespaces)-->
+        <p style='white-space:pre-wrap'>{{ schedule.message }}</p>
+
+        <!-- Delete button-->
+        <!-- The button class is inherited from bootstrap-->
+        <a class="btn btn-danger" href='/schedule/delete/{{schedule.id}}'>Deletar</a>
+
+        <hr> <!-- Line divider -->
+
+    {% endfor %}
+
+{% endblock %}

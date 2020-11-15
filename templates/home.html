@@ -1,0 +1,32 @@
+<!-- Inherit all the HTML formatting code -->
+{% extends 'base.html' %}
+
+{% block head %}
+
+    <!-- The title of our web page -->
+    <title>Página inicial</title>
+
+{% endblock %}
+
+
+{% block body %}
+
+    <!-- Web page header-->
+    <h1>Página inicial</h1>
+
+    <!-- Quadro de anúncio de boas vindas formatado com Bootstrap -->
+    <main role="main">
+        <div class="jumbotron">
+          <div class="col-sm-8 mx-auto">
+            <h1>Bem-vindo(a)!</h1>
+            <p>Esta é a plataforma na web desenvolvida para receber solicitações de
+            agendamentos de envio de comunicação.</p>
+            <p>Para começar, clique no botão abaixo:</p>
+            <p>
+              <a class="btn btn-primary" href="/schedule" role="button">Ir para Agendamentos</a>
+            </p>
+          </div>
+        </div>
+    </main>
+
+{% endblock %}
